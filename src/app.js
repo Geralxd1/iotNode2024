@@ -4,7 +4,7 @@ import { PORT } from './config.js'
 
 const app = express()
 app.use(express.json());
-
+app.use(cors()); 
 //mostrar datos de estado edificio
 app.get('/estadoedificio', async (req, res) => {
   try {
