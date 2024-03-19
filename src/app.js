@@ -1,10 +1,11 @@
 import express from 'express'
 import { pool } from './db.js'
 import { PORT } from './config.js'
-
+var cors = require('cors')
 const app = express()
-app.use(express.json());
 
+app.use(express.json());
+app.use(cors())
 //mostrar datos de estado edificio
 app.get('/estadoedificio', async (req, res) => {
   try {
